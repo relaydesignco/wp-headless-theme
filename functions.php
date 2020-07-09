@@ -4,6 +4,7 @@
  * Headless functions and definitions
  */
 
+
 // add ACF fields to default WP REST API posts endpoint
 // http://midwestdesignweekapi.local/wp-json/wp/v2/posts
 function acf_to_rest_api($response, $post, $request)
@@ -42,148 +43,11 @@ add_action('rest_api_init', function () {
 });
 
 
-// add ACF fields to theme
-if (function_exists('acf_add_local_field_group')) :
-
-  acf_add_local_field_group(array(
-    'key' => 'group_5f0619fc9d392',
-    'title' => 'Event',
-    'fields' => array(
-      array(
-        'key' => 'field_5f061a0bb0083',
-        'label' => 'Speaker',
-        'name' => 'speaker',
-        'type' => 'text',
-        'instructions' => '',
-        'required' => 1,
-        'conditional_logic' => 0,
-        'wrapper' => array(
-          'width' => '',
-          'class' => '',
-          'id' => '',
-        ),
-        'default_value' => '',
-        'placeholder' => '',
-        'prepend' => '',
-        'append' => '',
-        'maxlength' => '',
-      ),
-      array(
-        'key' => 'field_5f074ede8ac90',
-        'label' => 'Image',
-        'name' => 'image',
-        'type' => 'image',
-        'instructions' => '',
-        'required' => 0,
-        'conditional_logic' => 0,
-        'wrapper' => array(
-          'width' => '',
-          'class' => '',
-          'id' => '',
-        ),
-        'return_format' => 'array',
-        'preview_size' => 'medium',
-        'library' => 'all',
-        'min_width' => '',
-        'min_height' => '',
-        'min_size' => '',
-        'max_width' => '',
-        'max_height' => '',
-        'max_size' => '',
-        'mime_types' => '',
-      ),
-      array(
-        'key' => 'field_5f061a29b0084',
-        'label' => 'Start Time',
-        'name' => 'start',
-        'type' => 'time_picker',
-        'instructions' => '',
-        'required' => 1,
-        'conditional_logic' => 0,
-        'wrapper' => array(
-          'width' => '',
-          'class' => '',
-          'id' => '',
-        ),
-        'display_format' => 'g:i a',
-        'return_format' => 'g:i a',
-      ),
-      array(
-        'key' => 'field_5f061d5e40ca0',
-        'label' => 'End Time',
-        'name' => 'end',
-        'type' => 'time_picker',
-        'instructions' => '',
-        'required' => 1,
-        'conditional_logic' => 0,
-        'wrapper' => array(
-          'width' => '',
-          'class' => '',
-          'id' => '',
-        ),
-        'display_format' => 'g:i a',
-        'return_format' => 'g:i a',
-      ),
-      array(
-        'key' => 'field_5f061a56b0085',
-        'label' => 'Link',
-        'name' => 'link',
-        'type' => 'url',
-        'instructions' => '',
-        'required' => 1,
-        'conditional_logic' => 0,
-        'wrapper' => array(
-          'width' => '',
-          'class' => '',
-          'id' => '',
-        ),
-        'default_value' => '',
-        'placeholder' => '',
-      ),
-      array(
-        'key' => 'field_5f074e778ac8e',
-        'label' => 'Sponsor',
-        'name' => 'sponsor',
-        'type' => 'image',
-        'instructions' => '',
-        'required' => 0,
-        'conditional_logic' => 0,
-        'wrapper' => array(
-          'width' => '',
-          'class' => '',
-          'id' => '',
-        ),
-        'return_format' => 'array',
-        'preview_size' => 'medium',
-        'library' => 'all',
-        'min_width' => '',
-        'min_height' => '',
-        'min_size' => '',
-        'max_width' => '',
-        'max_height' => '',
-        'max_size' => '',
-        'mime_types' => '',
-      ),
-    ),
-    'location' => array(
-      array(
-        array(
-          'param' => 'post_type',
-          'operator' => '==',
-          'value' => 'post',
-        ),
-      ),
-    ),
-    'menu_order' => 0,
-    'position' => 'normal',
-    'style' => 'default',
-    'label_placement' => 'top',
-    'instruction_placement' => 'label',
-    'hide_on_screen' => '',
-    'active' => true,
-    'description' => '',
-  ));
-endif;
+// specify whether I’m using a local Advanced Custom Fields configuration (development) or my PHP export (staging/production)
+// must also add the following to wp-config.php in your dev environment ONLY: define('USE_LOCAL_ACF_CONFIGURATION', true);
+if (!defined('USE_LOCAL_ACF_CONFIGURATION') || !USE_LOCAL_ACF_CONFIGURATION) {
+  require_once dirname(__FILE__) . '/advanced-custom-fields.php';
+}
 
 
 // We are using the Safe SVG plugin to enabe SVGs - it sanitizes the XML and also enables image preview in the dashboard, but the code below would also work
