@@ -8,5 +8,5 @@
 ?>
 
 <script type="text/javascript">
-  window.location = 'https://relaydesign.co';
+  window.location = 'https://midwestdesignweek.com';
 </script>
