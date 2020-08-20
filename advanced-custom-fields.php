@@ -1,6 +1,6 @@
 <?php
 // add ACF fields to theme
-if (function_exists('acf_add_local_field_group')) :
+if (function_exists('acf_add_local_field_group')):
 
   acf_add_local_field_group(array(
     'key' => 'group_5f0619fc9d392',
@@ -10,6 +10,59 @@ if (function_exists('acf_add_local_field_group')) :
         'key' => 'field_5f061a0bb0083',
         'label' => 'Speaker',
         'name' => 'speaker',
+        'type' => 'text',
+        'instructions' => '',
+        'required' => 1,
+        'conditional_logic' => 0,
+        'wrapper' => array(
+          'width' => '',
+          'class' => '',
+          'id' => '',
+        ),
+        'default_value' => '',
+        'placeholder' => '',
+        'prepend' => '',
+        'append' => '',
+        'maxlength' => '',
+      ),
+      array(
+        'key' => 'field_5f061a29b0084',
+        'label' => 'Start Time',
+        'name' => 'start',
+        'type' => 'date_time_picker',
+        'instructions' => '',
+        'required' => 1,
+        'conditional_logic' => 0,
+        'wrapper' => array(
+          'width' => '',
+          'class' => '',
+          'id' => '',
+        ),
+        'display_format' => 'm/d/Y g:i a',
+        'return_format' => 'm/d/Y g:i a',
+        'first_day' => 1,
+      ),
+      array(
+        'key' => 'field_5f061d5e40ca0',
+        'label' => 'End Time',
+        'name' => 'end',
+        'type' => 'date_time_picker',
+        'instructions' => '',
+        'required' => 1,
+        'conditional_logic' => 0,
+        'wrapper' => array(
+          'width' => '',
+          'class' => '',
+          'id' => '',
+        ),
+        'display_format' => 'm/d/Y g:i a',
+        'return_format' => 'm/d/Y g:i a',
+        'first_day' => 1,
+      ),
+      array(
+        'key' => 'field_5f08ed730b358',
+        'label' => 'Short Description',
+        'name' => 'description',
         'type' => 'text',
         'instructions' => '',
         'required' => 1,
@@ -50,41 +103,9 @@ if (function_exists('acf_add_local_field_group')) :
         'mime_types' => '',
       ),
       array(
-        'key' => 'field_5f061a29b0084',
-        'label' => 'Start Time',
-        'name' => 'start',
-        'type' => 'time_picker',
-        'instructions' => '',
-        'required' => 1,
-        'conditional_logic' => 0,
-        'wrapper' => array(
-          'width' => '',
-          'class' => '',
-          'id' => '',
-        ),
-        'display_format' => 'g:i a',
-        'return_format' => 'g:i a',
-      ),
-      array(
-        'key' => 'field_5f061d5e40ca0',
-        'label' => 'End Time',
-        'name' => 'end',
-        'type' => 'time_picker',
-        'instructions' => '',
-        'required' => 1,
-        'conditional_logic' => 0,
-        'wrapper' => array(
-          'width' => '',
-          'class' => '',
-          'id' => '',
-        ),
-        'display_format' => 'g:i a',
-        'return_format' => 'g:i a',
-      ),
-      array(
         'key' => 'field_5f061a56b0085',
-        'label' => 'Link',
-        'name' => 'link',
+        'label' => 'Zoom Link',
+        'name' => 'url',
         'type' => 'url',
         'instructions' => '',
         'required' => 1,
@@ -142,6 +163,89 @@ if (function_exists('acf_add_local_field_group')) :
   ));
 
   acf_add_local_field_group(array(
+    'key' => 'group_5f08e265b234d',
+    'title' => 'Speakers',
+    'fields' => array(
+      array(
+        'key' => 'field_5f08e26b24a73',
+        'label' => 'Image',
+        'name' => 'image',
+        'type' => 'image',
+        'instructions' => '',
+        'required' => 1,
+        'conditional_logic' => 0,
+        'wrapper' => array(
+          'width' => '',
+          'class' => '',
+          'id' => '',
+        ),
+        'return_format' => 'array',
+        'preview_size' => 'medium',
+        'library' => 'all',
+        'min_width' => '',
+        'min_height' => '',
+        'min_size' => '',
+        'max_width' => '',
+        'max_height' => '',
+        'max_size' => '',
+        'mime_types' => '',
+      ),
+      array(
+        'key' => 'field_5f08e43025b8c',
+        'label' => 'Website Link',
+        'name' => 'url',
+        'type' => 'url',
+        'instructions' => '',
+        'required' => 1,
+        'conditional_logic' => 0,
+        'wrapper' => array(
+          'width' => '',
+          'class' => '',
+          'id' => '',
+        ),
+        'default_value' => '',
+        'placeholder' => '',
+      ),
+      array(
+        'key' => 'field_5f08e6e2a213a',
+        'label' => 'Featured',
+        'name' => 'featured',
+        'type' => 'true_false',
+        'instructions' => 'Will this person be displayed on the homepage?',
+        'required' => 0,
+        'conditional_logic' => 0,
+        'wrapper' => array(
+          'width' => '',
+          'class' => '',
+          'id' => '',
+        ),
+        'message' => '',
+        'default_value' => 0,
+        'ui' => 1,
+        'ui_on_text' => '',
+        'ui_off_text' => '',
+      ),
+    ),
+    'location' => array(
+      array(
+        array(
+          'param' => 'post_type',
+          'operator' => '==',
+          'value' => 'speaker',
+        ),
+      ),
+    ),
+    'menu_order' => 0,
+    'position' => 'normal',
+    'style' => 'default',
+    'label_placement' => 'top',
+    'instruction_placement' => 'label',
+    'hide_on_screen' => '',
+    'active' => true,
+    'description' => '',
+  ));
+
+  acf_add_local_field_group(array(
     'key' => 'group_5f07993637cd6',
     'title' => 'Sponsors',
     'fields' => array(
@@ -169,6 +273,48 @@ if (function_exists('acf_add_local_field_group')) :
         'max_size' => '',
         'mime_types' => '',
       ),
+      array(
+        'key' => 'field_5f08def206486',
+        'label' => 'Level',
+        'name' => 'level',
+        'type' => 'select',
+        'instructions' => '',
+        'required' => 1,
+        'conditional_logic' => 0,
+        'wrapper' => array(
+          'width' => '',
+          'class' => '',
+          'id' => '',
+        ),
+        'choices' => array(
+          'Top' => 'Top',
+          'Paid' => 'Paid',
+          'In-Kind' => 'In-Kind',
+        ),
+        'default_value' => false,
+        'allow_null' => 0,
+        'multiple' => 0,
+        'ui' => 0,
+        'return_format' => 'value',
+        'ajax' => 0,
+        'placeholder' => '',
+      ),
+      array(
+        'key' => 'field_5f08df3106487',
+        'label' => 'Website Link',
+        'name' => 'url',
+        'type' => 'url',
+        'instructions' => '',
+        'required' => 1,
+        'conditional_logic' => 0,
+        'wrapper' => array(
+          'width' => '',
+          'class' => '',
+          'id' => '',
+        ),
+        'default_value' => '',
+        'placeholder' => '',
+      ),
     ),
     'location' => array(
       array(
@@ -189,4 +335,4 @@ if (function_exists('acf_add_local_field_group')) :
     'description' => '',
   ));
 
-endif;
+  endif;
