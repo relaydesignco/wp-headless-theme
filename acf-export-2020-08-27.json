@@ -82,7 +82,7 @@
             },
             {
                 "key": "field_5f061a56b0085",
-                "label": "Zoom Link",
+                "label": "Register Link",
                 "name": "url",
                 "type": "url",
                 "instructions": "",
@@ -95,30 +95,6 @@
                 },
                 "default_value": "",
                 "placeholder": ""
-            },
-            {
-                "key": "field_5f074e778ac8e",
-                "label": "Sponsor",
-                "name": "sponsor",
-                "type": "image",
-                "instructions": "",
-                "required": 0,
-                "conditional_logic": 0,
-                "wrapper": {
-                    "width": "",
-                    "class": "",
-                    "id": ""
-                },
-                "return_format": "array",
-                "preview_size": "medium",
-                "library": "all",
-                "min_width": "",
-                "min_height": "",
-                "min_size": "",
-                "max_width": "",
-                "max_height": "",
-                "max_size": "",
-                "mime_types": ""
             }
         ],
         "location": [
@@ -208,7 +184,7 @@
                 "name": "sessions",
                 "type": "repeater",
                 "instructions": "Add the events this speaker is presenting at",
-                "required": 1,
+                "required": 0,
                 "conditional_logic": 0,
                 "wrapper": {
                     "width": "",
@@ -306,8 +282,9 @@
                     "id": ""
                 },
                 "choices": {
-                    "Top": "Top",
-                    "Paid": "Paid",
+                    "Premier": "Premier",
+                    "Event": "Event",
+                    "Supporting": "Supporting",
                     "In-Kind": "In-Kind"
                 },
                 "default_value": false,
@@ -324,7 +301,7 @@
                 "name": "url",
                 "type": "url",
                 "instructions": "",
-                "required": 1,
+                "required": 0,
                 "conditional_logic": 0,
                 "wrapper": {
                     "width": "",

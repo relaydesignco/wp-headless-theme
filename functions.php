@@ -11,12 +11,6 @@ if (!defined('ABSPATH')) {
 // add featured images to posts
 add_theme_support('post-thumbnails');
 
-// specify whether I’m using a local Advanced Custom Fields configuration (development) or my PHP export (staging/production)
-// must also add the following to wp-config.php in your dev environment ONLY: define('USE_LOCAL_ACF_CONFIGURATION', true);
-if (!defined('USE_LOCAL_ACF_CONFIGURATION') || !USE_LOCAL_ACF_CONFIGURATION) {
-    require_once dirname(__FILE__) . '/advanced-custom-fields.php';
-}
-
 // We are using the SVG-Support plugin - below is all you need to allow SVGs, but getting them to display in the dashboard correctly is a pain
 
 // function allow_svg($mimes)
