@@ -116,6 +116,45 @@
         "description": ""
     },
     {
+        "key": "group_5f47d88576027",
+        "title": "Site Wide Options",
+        "fields": [
+            {
+                "key": "field_5f47d89bdc69e",
+                "label": "Register Link",
+                "name": "register_link",
+                "type": "url",
+                "instructions": "",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "https:\/\/www.fonteva.com\/",
+                "placeholder": ""
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "post_type",
+                    "operator": "==",
+                    "value": "option"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": true,
+        "description": ""
+    },
+    {
         "key": "group_5f08e265b234d",
         "title": "Speakers",
         "fields": [
